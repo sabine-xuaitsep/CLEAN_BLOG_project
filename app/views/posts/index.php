@@ -23,7 +23,7 @@
         <?php echo $post['sousTitre'] ; ?>
       </h3>
     </a>
-    <p class="post-meta">Posted on September 24, 2017</p>
+    <p class="post-meta">Posted on <?php echo Core\Functions\datify($post['datePublication']) ; ?></p>
   </div>
   <hr>
 <?php endforeach ; ?>
