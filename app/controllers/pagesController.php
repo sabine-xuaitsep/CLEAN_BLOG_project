@@ -4,7 +4,7 @@
 */
 
 namespace App\Controllers\PagesController;
-use \App\Models\PagesModel;
+use App\Models\PagesModel;
 
 
 /**

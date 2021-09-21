@@ -19,7 +19,13 @@
     <?php include '../app/views/templates/partials/_nav.php'; ?>
 
     <!-- CONTENU -->
-    <?php include '../app/views/templates/partials/_main.php'; ?>
+    <main>
+
+      <?php echo $content; ?>
+
+      <hr>
+
+    </main>
 
     <!-- Footer -->
     <?php include '../app/views/templates/partials/_footer.php'; ?>

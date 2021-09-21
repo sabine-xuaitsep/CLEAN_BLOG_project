@@ -9,7 +9,7 @@ if(isset($_GET['pageID'])):
   // CTRL: pagesController
   // ACTION: show
   include_once '../app/controllers/pagesController.php';
-  \App\Controllers\PagesController\showAction($conn, $_GET['pageID']);
+  App\Controllers\PagesController\showAction($conn, $_GET['pageID']);
 
 else:
   // DEFAULT ROUTE
@@ -17,6 +17,6 @@ else:
   // CTRL: pagesController
   // ACTION: show
   include_once '../app/controllers/pagesController.php';
-  \App\Controllers\PagesController\showAction($conn, 1);
+  App\Controllers\PagesController\showAction($conn, 1);
 
 endif;

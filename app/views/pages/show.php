@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="clearfix">
-        <?php echo $page['texte']; ?>
+          <?php echo $page['texte']; ?>
         </div>
 
         <!-- ADD A POST -->
@@ -87,5 +87,3 @@
       </div>
     </div>
   </div>
-
-  <hr>

@@ -16,7 +16,7 @@
 
       <?php 
       include_once '../app/models/pagesModel.php';
-      $pages = \App\Models\PagesModel\findAll($conn); 
+      $pages = App\Models\PagesModel\findAll($conn); 
 
       // Available VARIABLES: 
       // - $pages: ARRAY(ARRAY(id, titre, sousTitre, texte, titreMenu, image, tri))
@@ -25,7 +25,7 @@
       ?>
 
         <li class="nav-item">
-          <a class="nav-link" href="page/<?php echo $page['id']; ?>/<?php echo \Core\Functions\slugify($page['titre']); ?>">
+          <a class="nav-link" href="page/<?php echo $page['id']; ?>/<?php echo Core\Functions\slugify($page['titre']); ?>">
             <?php echo $page['titreMenu']; ?>
           </a>
         </li>
