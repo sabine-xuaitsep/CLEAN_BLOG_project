@@ -3,10 +3,20 @@
   ./app/router.php
 */
 
+if(isset($_GET['pageID'])):
+  // PAGE ROUTE
+  // PATTERN: /id/pageSlug
+  // CTRL: pagesController
+  // ACTION: show
+  include_once '../app/controllers/pagesController.php';
+  \App\Controllers\PagesController\showAction($conn, $_GET['pageID']);
 
-// DEFAULT ROUTE
-// PATTERN: /
-// CTRL: pagesController
-// ACTION: show
-include_once '../app/controllers/pagesController.php';
-\App\Controllers\PagesController\showAction($conn, 1);
+else:
+  // DEFAULT ROUTE
+  // PATTERN: /
+  // CTRL: pagesController
+  // ACTION: show
+  include_once '../app/controllers/pagesController.php';
+  \App\Controllers\PagesController\showAction($conn, 1);
+
+endif;
