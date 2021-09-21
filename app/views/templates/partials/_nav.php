@@ -13,15 +13,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
+
       <?php 
       include_once '../app/models/pagesModel.php';
       $pages = \App\Models\PagesModel\findAll($conn); 
+
+      // Available VARIABLES: 
+      // - $pages: ARRAY(ARRAY(id, titre, sousTitre, texte, titreMenu, image, tri))
+
       foreach($pages as $page):
       ?>
+
         <li class="nav-item">
-          <a class="nav-link" href="?pageID=<?php echo $page['id']; ?>">Home</a>
+          <a class="nav-link" href="page/<?php echo $page['id']; ?>/<?php echo \Core\Functions\slugify($page['titre']); ?>">
+            <?php echo $page['titreMenu']; ?>
+          </a>
         </li>
+
       <?php endforeach; ?>
+
       </ul>
     </div>
   </div>

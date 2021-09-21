@@ -5,7 +5,7 @@
 
 if(isset($_GET['pageID'])):
   // PAGE ROUTE
-  // PATTERN: /id/pageSlug
+  // PATTERN: page/id/slug => ?pageID=x
   // CTRL: pagesController
   // ACTION: show
   include_once '../app/controllers/pagesController.php';

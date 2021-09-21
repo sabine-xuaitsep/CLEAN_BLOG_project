@@ -12,6 +12,10 @@ RewriteEngine on
 # Règles de réécriture d'URL : 
 #-----------------------------------------------
 
+# PAGES DETAILS
+# PATTERN: page/id/slug
+# URL: index.php?pageID=x
+RewriteRule ^page\/([1-9][0-9]*)\/[a-z0-9][a-z0-9\-]*$ index.php?pageID=$1 [L]
 
 #-----------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf|svg|eot|woff|woff2)$ [NC]
