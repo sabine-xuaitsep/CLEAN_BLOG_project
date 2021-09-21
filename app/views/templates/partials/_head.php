@@ -11,6 +11,8 @@
 
 <title>Clean Blog - <?php echo $title; ?></title>
 
+<base href="<?php echo BASE_HREF_PUBLIC; ?>">
+
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
