@@ -22,3 +22,18 @@ function findOne(\PDO $conn, int $id) :array {
   $rs->execute();
   return $rs->fetch(\PDO::FETCH_ASSOC);
 }
+
+
+/**
+ * findAll pages
+ *
+ * @param \PDO $conn
+ * @return array
+ */
+function findAll(\PDO $conn) :array {
+  $sql = 'SELECT *
+          FROM pages
+          ORDER BY tri ASC;';
+  $rs = $conn->query($sql);
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
