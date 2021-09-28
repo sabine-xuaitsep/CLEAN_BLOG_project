@@ -3,7 +3,7 @@
   ./app/views/posts/index.php
 
   Available VARIABLES: 
-  - $posts: ARRAY(ARRAY(id, titre, sousTitre, datePublication, texte, user categorie_id))
+  - $posts: ARRAY(ARRAY(id, titre, sousTitre, datePublication, texte, user, categorie_id))
 */
 ?>
 
@@ -15,7 +15,7 @@
 <!-- POSTS LIST -->
 <?php foreach($posts as $post): ?>
   <div class="post-preview">
-    <a href="#">
+    <a href="post/<?php echo $post['id']; ?>/<?php echo Core\Functions\slugify($post['titre']); ?>">
       <h2 class="post-title">
       <?php echo $post['titre'] ; ?>
       </h2>
