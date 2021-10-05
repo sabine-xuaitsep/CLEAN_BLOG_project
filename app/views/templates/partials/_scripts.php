@@ -11,3 +11,8 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/clean-blog.min.js"></script>
+
+<!-- Loading AXIOS -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- AJAX scripts -->
+<?php echo $scripts; ?>

@@ -12,6 +12,7 @@ define('DB_PASSWORD', 'root');
 // Dynamic zone initialization
 $content = '';
 $title = '';
+$scripts = '';
 
 // Default date format
 define('DATE_FORMAT', 'F d, Y');

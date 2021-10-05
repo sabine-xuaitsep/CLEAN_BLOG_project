@@ -3,7 +3,22 @@
   ./app/router.php
 */
 
-if(isset($_GET['pageID'])):
+
+// --------------------------------- AJAX ROUTES ---------------------------------
+
+if(isset($_GET['more'])):
+  // OLDERS POSTS ROUTE
+  // PATTERN: ?more=offset
+  // CTRL: postsController
+  // ACTION: ajaxListAction
+  include_once '../app/controllers/postsController.php';
+  App\Controllers\PostsController\ajaxListAction($conn, $_GET['more']);
+
+
+
+// --------------------------------- STANDARDS ROUTES ---------------------------------
+
+elseif(isset($_GET['pageID'])):
   // PAGE ROUTE
   // PATTERN: page/id/slug => ?pageID=x
   // CTRL: pagesController

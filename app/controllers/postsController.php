@@ -18,6 +18,9 @@ function indexAction(\PDO $conn) {
   include_once '../app/models/postsModel.php';
   $posts = PostsModel\findAll($conn);
 
+  GLOBAL $scripts;
+    $scripts .= '<script src="js/posts/index.js"></script>';
+
   // load posts/index directly
   include '../app/views/posts/index.php';
 }
@@ -41,4 +44,21 @@ function showAction(\PDO $conn, int $id) {
   ob_start();
     include '../app/views/posts/show.php';
   $content = ob_get_clean();
+}
+
+
+/**
+ * ajaxListAction
+ *
+ * @param \PDO $conn
+ * @param integer $offset
+ * @return void
+ */
+function ajaxListAction(\PDO $conn, int $offset) {
+  // asking all posts to postsModel
+  include_once '../app/models/postsModel.php';
+  $posts = PostsModel\findAll($conn, 10, $offset);
+
+  // load posts/index directly
+  include '../app/views/posts/list.php';
 }
