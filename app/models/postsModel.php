@@ -42,3 +42,24 @@ function findAll(\PDO $conn, int $limit = 10, int $offset = 0) :array {
   $rs->execute();
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
+
+
+/**
+ * updateOne field of post by ID
+ *
+ * @param \PDO $conn
+ * @param integer $id
+ * @param string $field
+ * @param string $data
+ * @return void
+ */
+function updateOne(\PDO $conn, int $id, string $field, string $data) {
+  $sql = "UPDATE posts
+          SET $field = :data
+          WHERE id = :id;";
+  
+  $rs = $conn->prepare($sql);
+  $rs->bindValue(':data', $data, \PDO::PARAM_STR);
+  $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+  $rs->execute();       
+}

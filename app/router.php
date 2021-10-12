@@ -10,9 +10,17 @@ if(isset($_GET['more'])):
   // OLDERS POSTS ROUTE
   // PATTERN: ?more=offset
   // CTRL: postsController
-  // ACTION: ajaxListAction
+  // ACTION: ajaxList
   include_once '../app/controllers/postsController.php';
   App\Controllers\PostsController\ajaxListAction($conn, $_GET['more']);
+
+elseif(isset($_GET['edit'])):
+  // EDIT POST ROUTE
+  // PATTERN: ?edit=postID&field=nameOfField&data=data
+  // CTRL: postsController
+  // ACTION: ajaxEdit
+  include_once '../app/controllers/postsController.php';
+  App\Controllers\PostsController\ajaxEditAction($conn, $_GET['edit'], $_GET['field'], $_GET['data']);
 
 
 
